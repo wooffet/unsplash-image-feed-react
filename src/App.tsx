@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
+  const getImages = () => {
+    let images = [];
+    const size = 300;
+    const rows = 10;
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < 3; j++) {
+        images.push(
+          `https://source.unsplash.com/random/${
+            size + Math.floor(Math.random() * 10)
+          }x${size + Math.floor(Math.random() * 10)}`
+        );
+      }
+    }
+    return images;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className='title'>Unsplash Image Feed</h1>
+      <h2 className='title'>Instagram-like feed of images :)</h2>
+      <div className='feed-container'>
+        {getImages().map((image, index) => {
+          return <img key={index} src={image} alt='' />;
+        })}
+      </div>
+    </>
   );
-}
+};
 
 export default App;
