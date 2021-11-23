@@ -1,2 +1,2 @@
-# unsplash-mage-feed-react
+# unsplash-image-feed-react
  
