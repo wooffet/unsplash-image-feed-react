@@ -1,8 +1,15 @@
+* {
+  box-sizing: 0;
+  padding: 0;
+  margin: 0;
+}
+
 #root {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #f4f4f4;
 }
 
 .feed-container {
@@ -15,6 +22,7 @@
 }
 
 img {
+  object-fit: contain;
   padding: 10px;
   height: 300px;
   width: 300px;
@@ -23,5 +31,14 @@ img {
 
 .title {
   text-align: center;
-  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  padding: 1.2rem;
+}
+
+.sub-title {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem;
 }
